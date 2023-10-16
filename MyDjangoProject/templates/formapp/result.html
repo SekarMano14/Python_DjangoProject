@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css//modelapp//table.css' %}">
+</head>
+<body>
+<table class="redTable">
+
+    <tr>
+        <th>Firstname</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>MobileNumber</th>
+        <th>Password</th>
+        <th>Confirm_Password</th>
+    </tr>
+    <tr>
+        {% for r in register %}
+        <td>{{r.Firstname}}</td>
+        <td>{{r.LastName}}</td>
+        <td>{{r.Email}}</td>
+        <td>{{r.MobileNumber}}</td>
+        <td>{{r.Password}}</td>
+        <td>{{r.Confirm_Password}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL 2023 Table</title>
+    {% load static %}
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'css/secondapp/ipltable.css' %}">
+<table class="ipltable">
+    <h1>IPL Table 2023</h1>
+    <h1>This IPL match Sponsered by {{name}}</h1>
+    <h1>The IPL match Conducted By {{country}}</h1>
+    <h1>Todays Match Location is {{location}}</h1>
+    <h1>The Match Date is {{date}}</h1>
+    <tr class="title">
+        <th>Rank</th>
+        <th>TeamName</th>
+        <th>No. of Games Played</th>
+        <th>Win</th>
+        <th>Loss</th>
+        <th>No Result</th>
+        <th>Points</th>
+        <th>NRR</th>
+    </tr>
+    <tr class="csk">
+        <td>1</td>
+        <td>CSK</td>
+        <td>16</td>
+        <td>12</td>
+        <td>4</td>
+        <td>-</td>
+        <td>24</td>
+        <td>+1.625</td>
+    </tr>
+    <tr class="rcb">
+        <td>2</td>
+        <td>RCB</td>
+        <td>16</td>
+        <td>10</td>
+        <td>6</td>
+        <td>-</td>
+        <td>20</td>
+        <td>+1.00</td>
+    </tr>
+</table>
+<img src="{% static 'images/car.jpg' %}" alt="My image">
+<img src="{% static 'images/robot.jpg' %}" alt="My image">
+</body>
+</html>

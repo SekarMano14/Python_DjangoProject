@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details of MK Company</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/modelapp/table.css' %}">
+</head>
+<body>
+<h1>Welcome to MK Company</h1>
+<H2>Here the all employee details of the Company</H2>
+<table class="redTable">
+    <tr>
+        <th>Employee S.no</th>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Phnoe</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        {% for e in empdetails %}
+        <td>{{e.id}}</td>
+        <td>{{e.employee_id}}</td>
+        <td>{{e.employee_name}}</td>
+        <td>{{e.phone}}</td>
+        <td>{{e.address}}</td>
+        <td>{{e.salary}}</td>
+        <td>{{e.email}}</td>
+        <td><a href="/curd/updateemployee/{{e.id}}">Update</a></td>
+        <td><a href="/curd/deleteemployee/{{e.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/curd/addemployee/">Click here to Add a New Employee</a>
+</body>
+</html>

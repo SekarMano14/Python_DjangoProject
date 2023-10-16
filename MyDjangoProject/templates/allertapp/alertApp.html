@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "allertapp/base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Alert App Child Page</title>
+    <script src="{% static 'js/jquery_file.js' %}"></script>
+</head>
+<body>
+<h1>Sample Message page to show the details</h1>
+<div class="alert messages">
+    {% if messages %}
+    {% for msg in messages %}
+    <h1 class="alert_msg">{{msg}}</h1>
+    {% endfor %}
+    {% endif %}
+    <a onclick="alert()" href="{% url 'Success' %}">Success</a> <br><br>
+    <a href="{% url 'Error' %}">Error</a> <br><br>
+    <a href="{% url 'Info' %}">Information</a> <br><br>
+    <a href="{% url 'Warning' %}">Warning</a> <br><br>
+</div>
+<script>
+    $(document).ready(function(){$(".alert_msg").hide(5000);});
+    function alert(){confirm("This is Success")};
+</script>
+</body>
+{% endblock %}
+</html>
